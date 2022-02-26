@@ -1,0 +1,9 @@
+###Login using device code
+az login --use-device-code
+
+### Start VM by ids
+az vm start --no-wait --ids /subscriptions/89aa938e-2a51-4837-ac79-8d4518c589d1/resourceGroups/PRACTICE-COMPUTE2-RG/providers/Microsoft.Compute/virtualMachines/practicecompute-k8s-1
+az vm start --no-wait --ids /subscriptions/89aa938e-2a51-4837-ac79-8d4518c589d1/resourceGroups/PRACTICE-COMPUTE2-RG/providers/Microsoft.Compute/virtualMachines/practicecompute-k8s-2
+
+## Connect to microk8s host
+ssh rohan@mk8s-0.mugiwara.stream -i C:\Users\dabla\Downloads\practicecompute-microk8s.pem -q -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no

@@ -1,0 +1,10 @@
+helm repo add newrelic https://helm-charts.newrelic.com && helm repo update && \
+kubectl create namespace newrelic ; helm upgrade --install newrelic-bundle newrelic/nri-bundle \
+ --set global.licenseKey=ca0ea8cbf3b9060b053e679b6cef342b8e02NRAL \
+ --set global.cluster=microk8s \
+ --namespace=newrelic \
+ --set newrelic-infrastructure.privileged=true \
+ --set global.lowDataMode=true \
+ --set ksm.enabled=true \
+ --set kubeEvents.enabled=true \
+ --set logging.enabled=true
